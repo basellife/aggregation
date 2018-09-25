@@ -1,109 +1,82 @@
-import Sequelize from 'sequelize';
-import casual from 'casual';
 import _ from 'lodash';
 // add this import at the top
 import fetch from 'node-fetch';
 
+var person = {fname:"John", lname:"Doe", age:25}; 
+const Countries = 
+  {shortName:"ae",Name:"United Arab Emirates"}
+  /*
+  ['ar', 'Argentina'],
+  ['at', 'Austria'],
+  ['au', 'Australia'],
+  ['be', 'Belgium'],
+  ['bg', 'Bulgaria'],
+  ['br', 'Brasil'],
+  ['ca', 'Canada'],
+  ['ch','Switzerland'],
+  ['cn', 'China'],
+  ['co', 'Columbia'],
+  ['cu', 'Cuba'],
+  ['cz ', 'Czech Republic'],
+  ['de', 'Germany'],
+  ['eg', 'Egypt'],
+  ['fr', 'France'],
+  ['gb', 'United Kingdom'],
+  ['gr','Greece'],
+  ['hk', 'Hong Kong'],
+  ['hu', 'Hungary'],
+  ['id', 'India'],
+  ['ie', 'Ireland'],
+  ['il', 'Israel'],
+  ['in', 'India'],
+  ['it', 'Italy'],
+  ['jp', 'Japan'],
+  ['kr', 'Korea'],
+  ['lt', 'Lithuania'],
+  ['lv', 'Latvia'],
+  ['ma', 'Morroco'],
+  ['mx', 'Mexico'],
+  ['my', 'Malaysia'],
+  ['ng', 'Nigeria'],
+  ['nl', 'Netherlands'],
+  ['no', 'Norway'],
+  ['nz', 'New Zealand'],
+  ['ph', 'Phiippines'],
+  ['pl', 'Poland'],
+  ['pt', 'Portugal'],
+  ['ro', 'Romania'],
+  ['rs', 'Serbia'],
+  ['ru', 'Russian Federation'],
+  ['sa', 'Saudi Arabia'],
+  ['se', 'Sweden'],
+  ['sg', 'Singapore'],
+  ['si', 'Slovenia'],
+  ['sk', 'Slovakia'],
+  ['th', 'Thailand'],
+  ['tr', 'Turkey'],
+  ['tw', 'Taiwan'],
+  ['ua', 'Ukraine'],
+  ['us', 'Usa'],
+  ['ve', 'Venezuela'],
+  ['za', 'Zambia']
+  ];*/
 
-const db = new Sequelize('blog', null, null, {
-  dialect: 'sqlite',
-  storage: './new.sqlite',
-});
-
-
-// add this somewhere in the middle
-const FortuneCookie = {
-    getOne() {
-      return fetch('http://fortunecookieapi.herokuapp.com/v1/cookie')
-        .then(res => res.json())
-        .then(res => {
-          return res[0].fortune.message;
-        });
-    },
-  };
-  db.dropAllSchemas();
-
-const AuthorModel = db.define('author', {
-  firstName: { type: Sequelize.STRING },
-  lastName: { type: Sequelize.STRING },
-});
-
-const CountryModel = db.define('Country', {
-  name: { type: Sequelize.STRING },
-  shortName: { type: Sequelize.STRING },
-});
-
-const CategoryModel = db.define('Category', {
-  name: { type: Sequelize.STRING },
-});
-const DatasourceModel = db.define('DataSource', {
-  name: { type: Sequelize.STRING },
-});
-const PostModel = db.define('post', {
-  title: { type: Sequelize.STRING },
-  text: { type: Sequelize.STRING },
-});
-
-AuthorModel.hasMany(PostModel);
-PostModel.belongsTo(AuthorModel);
-CountryModel.hasMany(CountryModel);
-CategoryModel.hasMany(CategoryModel);
-DatasourceModel.hasMany(DatasourceModel);
-// create mock data with a seed, so we always get the same
-
-
-CountryModel.create({
-
-     name: 'Switzerland',
-
-    shortName: 'CH',
-    
-  });
-  CountryModel.save
-
-/*'entertainment',
-'general health',
-'science',
+const Categories  = [
+  'business',
+  'entertainment',
+  'general health',
+  'science',
 'sports',
-'technology'
- name: 'entertainment',
-     name: 'general health',
-     name: 'science',
-     name: 'sports',
-     name: 'technology',
-*/
-     CategoryModel.build(
-       {
-
-     name: 'Business',
-  
-  }
-);
-
-    
-   CategoryModel.save
-
- DatasourceModel.create({
-
-   name: 'Reuters',
-  
-  });
-  DatasourceModel.save
-  
-  AuthorModel.create({
-        firstName: 'Martin',
-        lastName: 'Spedding',
-  }
-  );
-  AuthorModel.save
+  'technology'
+];
+const DataSources  = [
+  'usa today',
+  'reddit',
+  'fox news',
+  'bbc',
+'nbc',
+  'cnet'
+];
 
 
-
-    db.sync();
-const Author = db.models.author;
-const Post = db.models.post;
-const Country = db.models.Country;
-const Category = db.models.Category;
-const DataSource = db.models.DataSource;
-
-export { Author, Post, FortuneCookie, Country, Category, DataSource };
+export {  Countries, Categories, DataSources };
