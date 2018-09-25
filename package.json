@@ -1,49 +1,58 @@
 {
-  "name": "kit",
-  "version": "1.0.0",
-  "description": "Starting point for the Apollo GraphQL Server tutorial.",
-  "main": "server.js",
-  "dependencies": {
-    "apollo-server-express": "^1.3.0",
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.2",
-    "casual": "^1.5.19",
-    "cors": "^2.8.4",
-    "express": "^4.16.2",
-    "graphql": "^0.11.7",
-    "graphql-tools": "^2.13.0",
-    "lodash": "^4.17.10",
-    "mongoose": "^4.13.2",
-    "node-fetch": "^1.7.3",
-    "pg": "^6.4.2",
-    "pg-promise": "^8.4.5",
-    "promise-pg": "^0.1.1",
-    "sequelize": "^4.38.0",
-    "sqlite": "^2.9.2",
-    "sqlite3": "^4.0.2"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "eslint": "^5.3.0",
-    "nodemon": "^1.12.1"
-  },
-  "babel": {
-    "presets": [
-      "env"
+  "_args": [
+    [
+      "@babel/highlight@7.0.0",
+      "D:\\repos\\aggregation"
     ]
+  ],
+  "_development": true,
+  "_from": "@babel/highlight@7.0.0",
+  "_id": "@babel/highlight@7.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-UFMC4ZeFC48Tpvj7C8UgLvtkaUuovQX+5xNWrsIoMG8o2z+XFKjKaN9iVmS84dPwVN00W4wPmqvYoZF3EGAsfw==",
+  "_location": "/@babel/highlight",
+  "_phantomChildren": {
+    "color-convert": "1.9.3",
+    "escape-string-regexp": "1.0.5",
+    "has-flag": "3.0.0"
   },
-  "scripts": {
-    "start": "nodemon ./server.js --exec babel-node"
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@babel/highlight@7.0.0",
+    "name": "@babel/highlight",
+    "escapedName": "@babel%2fhighlight",
+    "scope": "@babel",
+    "rawSpec": "7.0.0",
+    "saveSpec": null,
+    "fetchSpec": "7.0.0"
   },
+  "_requiredBy": [
+    "/@babel/code-frame"
+  ],
+  "_resolved": "https://registry.npmjs.org/@babel/highlight/-/highlight-7.0.0.tgz",
+  "_spec": "7.0.0",
+  "_where": "D:\\repos\\aggregation",
+  "author": {
+    "name": "suchipi",
+    "email": "me@suchipi.com"
+  },
+  "dependencies": {
+    "chalk": "^2.0.0",
+    "esutils": "^2.0.2",
+    "js-tokens": "^4.0.0"
+  },
+  "description": "Syntax highlight JavaScript strings for output in terminals.",
+  "devDependencies": {
+    "strip-ansi": "^4.0.0"
+  },
+  "homepage": "https://babeljs.io/",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "@babel/highlight",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/apollographql/apollo-tutorial-kit.git"
+    "url": "https://github.com/babel/babel/tree/master/packages/babel-highlight"
   },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/apollographql/apollo-tutorial-kit/issues"
-  },
-  "homepage": "https://github.com/apollographql/apollo-tutorial-kit#readme"
+  "version": "7.0.0"
 }
